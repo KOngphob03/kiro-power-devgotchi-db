@@ -1,0 +1,10 @@
+name: devgotchi-db-setup
+version: 1.0.0
+description: "Spins up PostgreSQL via Docker and runs Drizzle migrations automatically."
+author: KOngphob03
+execute: |
+  docker-compose up -d db
+  bun x drizzle-kit push
+dependencies:
+  - docker
+  - bun
